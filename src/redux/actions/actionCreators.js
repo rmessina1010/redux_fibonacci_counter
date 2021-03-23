@@ -25,3 +25,9 @@ export const fibonaciPrev = (data) => ({
     type: ActionTypes.FIBONACI_PREV,
     payload: data//
 });
+
+
+export const setCounterInt = (int) => ({
+    type: ActionTypes.SET_COUNTER_INT,
+    payload: int//
+});

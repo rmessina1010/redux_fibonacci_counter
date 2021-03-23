@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Counter from './Counter';
 import Fibonaci from './Fibonnaci';
+import Shallow from './Shallow';
 import { connect } from 'react-redux';
 import { resetCounter, addCounter, subCounter, fibonaciNext, fibonaciPrev } from '../redux/actions/actionCreators'
 
@@ -8,9 +9,12 @@ import { resetCounter, addCounter, subCounter, fibonaciNext, fibonaciPrev } from
 const mapStateToProps = state => {
     console.log('map on MAIN--outside comp', state);
     return {
-       ...state.fibonaciReducer,
-       ...state.counterReducer,
-       ...state.counterAddSubReducer
+        ...state.fibonaciReducer,
+        ...state.counterReducer,
+        ...state.counterAddSubReducer,
+
+
+        ...state.counterIntReducer
     }
 }
 
@@ -51,7 +55,7 @@ class Main extends Component {
                 {this.state.showCounter ?
                     <Counter
                         start={0}
-                        int={5}
+                        int={this.props.counterInt}
                         count={this.props.count}
                         resetCounter={this.props.resetCounter}
                         addCounter={this.props.addCounter}
@@ -61,6 +65,8 @@ class Main extends Component {
                 }
                 <button onClick={this.toggleCounter} >{this.state.showCounter ? 'Hide' : 'Show'} counter</button>
                 <p>Last Reset Value:{this.props.lastCounterVal}</p>
+                <Shallow level={1} />
+
             </div>
         );
 

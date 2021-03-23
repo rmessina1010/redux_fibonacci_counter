@@ -22,3 +22,11 @@ export const counterAddSubReducer = (state = { count: 0 }, action) => {
     }
 }
 
+export const counterIntReducer = (state = { counterInt: 5 }, action) => {
+    switch (action.type) {
+        case ActionTypes.SET_COUNTER_INT:
+            return { ...state, counterInt: action.payload };
+        default:
+            return state;
+    }
+}

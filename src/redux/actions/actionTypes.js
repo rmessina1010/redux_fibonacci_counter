@@ -4,3 +4,4 @@ export const ADD_COUNTER = 'ADD_COUNTER';
 export const SUB_COUNTER = 'SUB_COUNTER';
 export const FIBONACI_NEXT = 'FIBONACI_NEXT';
 export const FIBONACI_PREV = 'FIBONACI_PREV';
+export const SET_COUNTER_INT = 'SET_COUNTER_INT';
